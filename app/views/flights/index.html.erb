@@ -36,7 +36,7 @@
       <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex align-items-center justify-content-between">
             <div>
-              Departs for <%= flight.description%> at <%= flight.departs_at%>
+              Departs for <%= flight.description%> at <%= flight.departs_at.to_s%>
             </div>
             <% if !flight.message_sent%>
             <!-- Alert NOT yet sent -->
@@ -81,7 +81,7 @@
       <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex align-items-center justify-content-between">
             <div>
-              Departs for <%= flight.description%> at <%= flight.departs_at%>
+              Departs for <%= flight.description%> at <%= flight.departs_at.to_s%>
             </div>
             <% if !flight.message_sent%>
             <!-- Alert NOT yet sent -->
