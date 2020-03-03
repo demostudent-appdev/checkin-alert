@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  # Index
+  get("/", { :controller => "flights", :action => "index" })
 
   # Routes for the Flight resource:
 
