@@ -14,10 +14,9 @@ class FlightsController < ApplicationController
 
   def create
     @flight = Flight.new
-    @flight.departs_at = params.fetch("query_departs_at")
-    @flight.passenger_id = params.fetch("query_passenger_id")
-    @flight.description = params.fetch("query_description")
-    @flight.message_sent = params.fetch("query_message_sent", false)
+    @flight.departs_at = params.fetch("departs_at_from_query")
+    @flight.passenger_id = @current_user.id
+    @flight.description = params.fetch("description_from_query")
 
     if @flight.valid?
       @flight.save
