@@ -16,5 +16,7 @@ class User < ApplicationRecord
   validates :phone, :presence => true
   
   has_secure_password
+
+  has_many :flights, :foreign_key => "passenger_id", :dependent => :destroy
   
 end

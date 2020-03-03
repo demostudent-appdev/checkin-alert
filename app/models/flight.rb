@@ -12,4 +12,7 @@
 #
 
 class Flight < ApplicationRecord
+  validates :passenger_id, :presence => true
+  validates :departs_at, :presence => true
+  belongs_to :passenger, :class_name => "User"
 end
