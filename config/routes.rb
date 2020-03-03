@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   # READ
   get("/flights", { :controller => "flights", :action => "index" })
   
-  get("/flights/:path_id", { :controller => "flights", :action => "show" })
+  # get("/flights/:path_id", { :controller => "flights", :action => "show" })
   
   # UPDATE
   
-  post("/modify_flight/:path_id", { :controller => "flights", :action => "update" })
+  # post("/modify_flight/:path_id", { :controller => "flights", :action => "update" })
   
   # DELETE
   get("/delete_flight/:path_id", { :controller => "flights", :action => "destroy" })
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   post("/modify_user", { :controller => "users", :action => "update" })
   
   # DELETE RECORD
-  get("/cancel_user_account", { :controller => "users", :action => "destroy" })
+  # get("/cancel_user_account", { :controller => "users", :action => "destroy" })
 
   # ------------------------------
 

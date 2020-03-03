@@ -1,14 +1,4 @@
-<div class="row mb-3">
-  <div class="col-md-12">
-    <h1>
-      List of all flights
-    </h1>
-  </div>
-</div>
-
-<hr>
-
-<div class="row mb-3">
+ <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h2>
       Add a new flight
@@ -16,35 +6,17 @@
 
     <form action="/insert_flight" method="post">
       <div class="form-group">
-        <label for="departs_at_box">
-          Departs at
-        </label>
-
-        <input type="datetime-local" id="departs_at_box" name="query_departs_at" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="passenger_id_box">
-          Passenger
-        </label>
-
-        <input type="text" id="passenger_id_box" name="query_passenger_id" class="form-control">
-      </div>
-
-      <div class="form-group">
         <label for="description_box">
           Description
         </label>
-
-        <input type="text" id="description_box" name="query_description" class="form-control">
+        <input type="text" id="description_box" name="description_from_query" class="form-control">
       </div>
-
-      <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="message_sent_box" name="query_message_sent" value="1">
-
-        <label class="custom-control-label" for="message_sent_box">Message sent</label>
+      <div class="form-group">
+        <label for="departs_at_box">
+          Departs at
+        </label>
+        <input type="datetime-local" id="departs_at_box" name="departs_at_from_query" class="form-control">
       </div>
-
       <button class="btn btn-block btn-outline-secondary">
         Create flight
       </button>
@@ -52,81 +24,94 @@
   </div>
 </div>
 
-<hr>
 <div class="row mb-3">
-  <div class="col-md-12">
-    <table class="table">
-      <tr>
-        <th>
-          ID
-        </th>
+	<div class="col-lg-8 offset-lg-2">
+    <div class="card">
+      <div class="card-header h6 py-3 text-uppercase">
+        Upcoming flights
+      </div>
 
-        <th>
-          Departs at
-        </th>
+      <!-- Do for every past flights -->
+      <% if true %>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-center justify-content-between">
+            <div>
+              Ruby
+            </div>
+            <% if true %>
+            <!-- Alert NOT yet sent -->
+            <div>
+                <span class="badge badge-danger">
+                  <i class="fas fa-fw fa-stopwatch"></i>
+                  Alert not yet sent
+                </span>
+              <a href="/delete_flight/">
+                <i class="far fa-fw fa-trash-alt"></i>
+              </a>
+            </div>
+            <% end %>
+            <% if true %>
+            <!-- Alert sent -->
+            <div>
+                <span class="badge badge-success">
+                <i class="fas fa-fw fa-check-circle"></i>
 
-        <th>
-          Passenger
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          Message sent
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @flights.each do |flight| %>
-      <tr>
-        <td>
-          <%= flight.id %>
-        </td>
-
-        <td>
-          <%= flight.departs_at %>
-        </td>
-
-        <td>
-          <%= flight.passenger_id %>
-        </td>
-
-        <td>
-          <%= flight.description %>
-        </td>
-
-        <td>
-          <%= flight.message_sent %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(flight.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(flight.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/flights/<%= flight.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+                  Alert sent
+                </span>
+              <a href="/delete_flight/">
+                <i class="far fa-fw fa-trash-alt"></i>
+              </a>
+            </div>
+            <% end %>
+          </li>
+      </ul>
       <% end %>
-    </table>
+    </div>
   </div>
 </div>
 
-<hr>
+
+<div class="row mb-3">
+	<div class="col-lg-8 offset-lg-2">
+    <div class="card">
+      <div class="card-header h6 py-3 text-uppercase">
+        Past flights
+      </div>
+      <% if true %>
+      <!-- Do for every past flights -->
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-center justify-content-between">
+            <div>
+              Ruby
+            </div>
+            <% if true %>
+            <!-- Alert NOT yet sent -->
+            <div>
+                <span class="badge badge-danger">
+                  <i class="fas fa-fw fa-stopwatch"></i>
+                  Alert not yet sent
+                </span>
+              <a href="/delete_flight/">
+                <i class="far fa-fw fa-trash-alt"></i>
+              </a>
+            </div>
+            <% end %>
+            <% if true %>
+            <!-- Alert sent -->
+            <div>
+                <span class="badge badge-success">
+                <i class="fas fa-fw fa-check-circle"></i>
+
+                  Alert sent
+                </span>
+              <a href="/delete_flight/">
+                <i class="far fa-fw fa-trash-alt"></i>
+              </a>
+            </div>
+            <% end %>
+          </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
